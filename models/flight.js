@@ -3,10 +3,9 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const departs = function(){
-  const currentDate = new Date(Date.now())
   const departDate = new Date()
-  departDate.setFullYear(currentDate +1)
-  departTime = departDate.setHours() + departDate.setMinutes()
+  departDate.setFullYear(departDate.getFullYear()+1)
+  departTime = setHours(departDate)
   
   return departDate + ' ' + departTime
 }
