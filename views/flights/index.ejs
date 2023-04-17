@@ -13,7 +13,7 @@
       <th>Departure Time</th>
     </thead>
     <tbody>
-      <%= flights.forEach((flight) => { %>
+      <% flights.forEach((flight) => { %>
         <tr>
           <td><%=flight.airline%></td>
           <td><%=flight.airport%></td>
@@ -30,3 +30,5 @@
         </tbody>
   </table>
 </main>
+
+<%- include('../partials/footer') %>
