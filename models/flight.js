@@ -5,9 +5,7 @@ const Schema = mongoose.Schema
 const departs = function(){
   const departDate = new Date()
   departDate.setFullYear(departDate.getFullYear()+1)
-  departTime = setHours(departDate)
-  
-  return departDate + ' ' + departTime
+  return (departDate + departDate.setHours (hr, min))
 }
 
 const flightSchema = new Schema({
