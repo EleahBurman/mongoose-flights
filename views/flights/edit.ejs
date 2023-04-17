@@ -29,7 +29,7 @@
     <input type="text" name="flightNo" value="<%= flight.flightNo %>" id="flightNo-input" min="10" max="9999">
     <h1><%=flight.departs%></h1>
     <label for="departs">Departs:</label>
-    <input type="datetime-local" name="departs" value="<%= flight.departs.toISOstring().slice(0,16) %>" id="departs-input"> 
+    <input type="datetime-local" name="departs" value="<%= flight.departs.toISOString().slice(0,16) %>" id="departs-input"> 
     <button type="submit">Save Flight</button>
   </form>
 </main>

@@ -19,7 +19,7 @@
   <div>Flight No.</div>
   <div><%= flight.flightNo %></div>
   <div>Depart</div>
-  <div><%= flight.departs %></div>
+  <div><%= flight.departs.toISOString().slice(0,16).replace('T', ' ') %></div>
 </section>
   <h2>Ticket</h2>
   <form 
@@ -28,13 +28,9 @@
     method="POST"
   >
   <label for="seat-input">Seat:</label>
-  <select name="seat" id="seat-input">
-    <input type="text" name="seat" id="seat-input">
-  </select>
+  <input type="text" name="seat" id="seat-input">
   <label for="price-input">Price:</label>
-  <select name="price" id="price-input">
-    <input type="number" name="price" id="price-input">
-  </select>
+  <input type="number" name="price" id="price-input">
   <button type="submit">Add Ticket</button>
   </form>
   <% if (flight.tickets.length) { %>
