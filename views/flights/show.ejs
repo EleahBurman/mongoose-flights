@@ -28,15 +28,16 @@
         <th>Price</th>
       </thead>
       <tbody>
-        <%= flights.tickets.forEach(ticket => { %>
+        <% flight.tickets.forEach(ticket => { %>
           <tr>
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
           </tr>
-        <%= })%>
+        <% })%>
       </tbody>
     </table>
   </div>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
