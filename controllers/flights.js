@@ -27,15 +27,15 @@ function index(req,res){
       flights: flights,
       title: 'All Flights'
     })
-    .catch(err=>{
-      console.log(err)
-      res.redirect('/flights/new')
-    })
+  })
+  .catch(err=>{
+    console.log(err)
+    res.redirect('/flights/new')
   })
 }
 
 function show(req, res){
-  Movie.findById(req.params.flightId)
+  Flight.findById(req.params.flightId)
   .then(flight =>{
     res.render('flights/show',{
       flight: flight,
@@ -87,6 +87,7 @@ function update(req, res){
     res.redirect('/flights')
   })
 }
+
 export{
   newFlight as new,
   create,

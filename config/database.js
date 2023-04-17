@@ -1,10 +1,10 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
-const  Schema = mongoose.Schema
+// shortcut to mongoose.connection object
+const db = mongoose.connection
 
-const flightSchema = new Schema({
-  airline: {type: String, enum: ['American', 'Southwest', 'United']},
-  airport: {type: String, enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN' ]},
-  flightNo: {type: Number, req: 10-9999},
-  departs: {type: Date}
+mongoose.connect(process.env.DATABASE_URL)
+	
+db.on('connected', function() {
+  console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`)
 })

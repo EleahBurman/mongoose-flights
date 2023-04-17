@@ -13,16 +13,17 @@
       <th>Departure Time</th>
     </thead>
     <tbody>
-      <%= flights.forEach((flight) => {
+      <%= flights.forEach((flight) => { %>
         <tr>
-          <td><%=flight.airline%></flight></td>
+          <td><%=flight.airline%></td>
           <td><%=flight.airport%></td>
           <td><%=flight.flightNo%></td>
           <td><%=flight.departs%></td>
+          <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
           <td>
-          <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-          </form>
+            <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
         </td>
         </tr>
         <% }) %>

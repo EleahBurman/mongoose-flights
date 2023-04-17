@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
 import methodOverride from 'method-override'
+import './config/database.js'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
