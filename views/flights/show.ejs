@@ -20,6 +20,23 @@
   <div><%= flight.flightNo %></div>
   <div>Depart</div>
   <div><%= flight.departs %></div>
+  <div>Ticket</div>
+  <div>
+    <table>
+      <thead>
+        <th>Seat</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <%= flights.tickets.forEach(ticket => { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+        <%= })%>
+      </tbody>
+    </table>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
