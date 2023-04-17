@@ -28,12 +28,12 @@
   method="POST"
 >
   <label for="seat-input">Seat:</label>
-  <select name="seat-input" id="seat-input">
-    <input type="text" name="seat-input" id="seat-input">
+  <select name="seat" id="seat-input">
+    <input type="text" name="seat" id="seat-input">
   </select>
   <label for="price-input">Price:</label>
-  <select name="price-input" id="price-input">
-    <input type="text" name="price-input" id="price-input">
+  <select name="price" id="price-input">
+    <input type="number" name="price" id="price-input">
   </select>
   <button type="submit">Add Ticket</button>
   <% if (flight.tickets.length) { %>
