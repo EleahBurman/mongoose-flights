@@ -1,12 +1,19 @@
 import { Flight } from "../models/flight.js"
 
 function newFlight(req, res){
+  const newFlight = new Flight ()
+  const departTime = newFlight.departs
+  const departsDate = departTime.toISOString().slice(0,16)
   res.render('flights/new',{
-    title: 'Add Flight'
+    title: 'Add Flight',
+    departsDate,
   })
 }
 
 function create(req,res){
+  if (req.body.flightNo){
+    req.body.flightNo = parseInt(req.body.flightNo)
+  }
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }

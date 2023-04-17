@@ -3,9 +3,9 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const departs = function(){
-  const departDate = new Date()
+  let departDate = new Date()
   departDate.setFullYear(departDate.getFullYear()+1)
-  return (departDate + departDate.setHours (hr, min))
+  return departDate
 }
 
 const flightSchema = new Schema({
