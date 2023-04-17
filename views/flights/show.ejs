@@ -20,8 +20,23 @@
   <div><%= flight.flightNo %></div>
   <div>Depart</div>
   <div><%= flight.departs %></div>
-  <div>Ticket</div>
-  <div>
+</section>
+  <h2>Ticket</h2>
+  <form 
+  id="add-ticket-form"
+  action="/flights/<%= flight._id %>/tickets"
+  method="POST"
+>
+  <label for="seat-input">Seat:</label>
+  <select name="seat-input" id="seat-input">
+    <input type="text" name="seat-input" id="seat-input">
+  </select>
+  <label for="price-input">Price:</label>
+  <select name="price-input" id="price-input">
+    <input type="text" name="price-input" id="price-input">
+  </select>
+  <button type="submit">Add Ticket</button>
+  <% if (flight.tickets.length) { %>
     <table>
       <thead>
         <th>Seat</th>
@@ -33,11 +48,12 @@
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
           </tr>
-        <% })%>
+        <% }) %>
       </tbody>
+    <% } else { %>
+      <h3>No Tickets Yet</h3>
+    <% } %>
     </table>
-  </div>
-  </section>
 </main>
 
 <%- include('../partials/footer') %>
