@@ -6,3 +6,6 @@
 - AAU, I want to be able to delete a flight from the list on the `index` view.
 - AAU, I want to be able to click on a flight to view its details on a `show` view.
 - AAU, I want to be able to click a button WITHIN the `show` view that brings me to an `edit` view where I can adjust a flight’s details.  When I save these changes, they should persist to the database and redirect me back to the flight’s `show` view.
+-AAU, when viewing the list of flights, I want to click on a “detail” link displayed next to each flight to view all of the properties for that flight (show view). This show page should include each of its tickets.
+-AAU, when viewing the details page (show view) for a flight, I want to be able to add a ticket for that flight. Each ticket, as defined by the schema above, includes a seat and a price.
+-AAU, when viewing the details page (show view) for a flight, I want to see a list of that flight’s tickets (seat & price)
