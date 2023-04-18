@@ -118,7 +118,28 @@ function createTicket (req,res){
     res.redirect('/')
   })
 }
-
+function addToFood(req,res){
+  Flight.findById(req.params.flightId)
+  .then(flight => {
+    flight.food.push(req.body.mealId)
+    flight.save()
+    .then(() => {
+      res.redirect(`/flights/${flight._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/flights')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
+}
+  // find the flight using it's _id
+  // push the meal _id into the cast array
+  // save the flight
+  // redirect back to show view
 export{
   newFlight as new,
   create,
@@ -127,5 +148,6 @@ export{
   deleteFlight as delete,
   edit,
   update,
-  createTicket
+  createTicket,
+  addToFood
 }
