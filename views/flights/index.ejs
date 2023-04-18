@@ -11,21 +11,22 @@
       <th>Flight No.</th>
       <th>Departure Date</th>
       <th>Departure Time</th>
+      <th>Remove Flight</th>
     </thead>
     <tbody>
       <% flights.forEach((flight) => { %>
-        <tr>
+        <tr <%= flight.departs < Date.now() ? 'class="red"' : '' %>>
           <td><%=flight.airline%></td>
           <td><%=flight.airport%></td>
           <td><%=flight.flightNo%></td>
           <td><%=flight.departs.toISOString().slice(0,16).replace('T', ' ')%></td>
           <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
           <td>
-            <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+            <form action="/flights/<%= flight._ids%>?_method=DELETE" method="POST">
               <button type="submit">X</button>
             </form>
-        </td>
-        </tr>
+          </td>
+          </tr>
         <% }) %>
         </tbody>
   </table>
