@@ -1,5 +1,5 @@
 import { Flight } from "../models/flight.js"
-
+import { Meal } from "../models/meal.js"
 function newFlight(req, res){
   const newFlight = new Flight ()
   const dt = newFlight.departs

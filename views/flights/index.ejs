@@ -22,9 +22,9 @@
           <td><%=flight.departs.toISOString().slice(0,16).replace('T', ' ')%></td>
           <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
           <td>
-            <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form>
+              <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
           </td>
           </tr>
         <% }) %>

@@ -27,13 +27,13 @@ const flightSchema = new Schema({
               max: 9999
             },
   departs: {type: Date, default: departs},
-  tickets: [ticketSchema]
+  tickets: [ticketSchema],
+  meal: [{type: Schema.Types.ObjectId, ref: 'Meal'}]
 },
   {timestamps: true})
 
 
 const Flight = mongoose.model('Flight', flightSchema)
-
 export {
-  Flight
+  Flight,
 }
