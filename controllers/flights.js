@@ -75,12 +75,19 @@ function edit(req, res){
   })
 }
 
+function ascendingOrder(req,res){
+  Flight.find({}).sort({date: 1}).execFind(function(err,docs){
+
+  })
+}
+
 function update(req, res){
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
   Flight.findByIdAndUpdate(req.params.flightId, req.body, {new: true})
   .then(flight =>{
+    ascendingOrder
     req.redirect(`/flights/${flight._id}`)
   })
   .catch(err => {
@@ -116,6 +123,7 @@ export{
   show,
   deleteFlight as delete,
   edit,
+  ascendingOrder,
   update,
   createTicket
 }

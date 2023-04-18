@@ -9,3 +9,4 @@
 -AAU, when viewing the list of flights, I want to click on a “detail” link displayed next to each flight to view all of the properties for that flight (show view). This show page should include each of its tickets.
 -AAU, when viewing the details page (show view) for a flight, I want to be able to add a ticket for that flight. Each ticket, as defined by the schema above, includes a seat and a price.
 -AAU, when viewing the details page (show view) for a flight, I want to see a list of that flight’s tickets (seat & price)
+-AAU, I want to view the list of flights by departure date in ascending order.
