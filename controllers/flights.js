@@ -13,7 +13,7 @@ function create(req,res){
   }
   Flight.create(req.body)
   .then(flight =>{
-    res.redirect('/flights')
+    res.redirect(`/flights/${flight._id}`)
   })
   .catch(err=> {
     console.log(err)
@@ -38,10 +38,19 @@ function index(req,res){
 
 function show(req, res){
   Flight.findById(req.params.flightId)
+  .populate('food')
   .then(flight =>{
-    res.render('flights/show',{
-      flight: flight,
-      title: 'Flight Detail'
+    Meal.find({_id: {$nin: flight.food}})
+      .then(meals =>{
+        res.render('flights/show', {
+          title: 'Flight Detail',
+          flight: flight,
+          meals: meals,
+        })
+      })
+    .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
     })
   })
   .catch(err => {
