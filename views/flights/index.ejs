@@ -9,8 +9,8 @@
       <th>Airline</th>
       <th>Airport</th>
       <th>Flight No.</th>
-      <th>Departure Date</th>
-      <th>Departure Time</th>
+      <th>Departure Date/Time</th>
+      <th>Meal</th>
       <th>Remove Flight</th>
     </thead>
     <tbody>
@@ -19,6 +19,9 @@
           <td><%=flight.airline%></td>
           <td><%=flight.airport%></td>
           <td><%=flight.flightNo%></td>
+          <td><% flight.meals.forEach((meal) => { %> 
+            <%= meal.name %>
+            <%  }) %></td>
           <td><%=flight.departs.toISOString().slice(0,16).replace('T', ' ')%></td>
           <td><a href="/flights/<%= flight._id %>">DETAILS</a></td>
           <td>
