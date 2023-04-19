@@ -21,11 +21,11 @@
   <div><%= flight.flightNo %></div>
   <div>Depart</div>
   <div><%= flight.departs.toISOString().slice(0,16).replace('T', ' ') %></div>
-  <%# start food list %>
-  <div>Food:</div>
+  <%# start meal list %>
+  <div>Meal:</div>
   <ul>
-    <% flight.food.forEach(foodItem => { %>
-      <li><%= foodItem.name %></li>
+    <% flight.meals.forEach(mealItem => { %>
+      <li><%= mealItem.name %></li>
     <% }) %>
   </ul>
   <%# end food list %>
