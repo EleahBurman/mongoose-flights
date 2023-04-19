@@ -13,15 +13,29 @@ function newMeal(req, res){
     res.redirect('/movies')
   })
 }
+
 function create(req, res) {
-  Meal.create(req.body)
-  .then(performer => {
-    res.redirect('/meals/new')
+  console.log(req.body.name)
+  Meal.find({name: req.body.name})
+  .then((meal) =>{
+    console.log(meal)
+    if (meal.length){
+      res.render('error', {
+        message: 'Meal already exists! Nice try!',
+        error: {status: 'Hunger Mode Error'}
+      })
+    } else {
+      Meal.create(req.body)
+      .then(meal => {
+        res.redirect('/meals/new')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/meals/new')
+      })
+    }
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/meals/new')
-  })
+
 }
 
 export {

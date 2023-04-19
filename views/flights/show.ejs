@@ -37,6 +37,7 @@
     <% }) %>
   </select>
   <%# if mealId is present in the array then the form disappears %>
+  
   <button type="submit">Add to Meals</button>
 </form>
   <h2>Ticket</h2>
@@ -63,7 +64,7 @@
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
             <td>
-              <form action="/flights/<%= flight._id %>/reviews/<%= ticket._id %>?_method=DELETE" method="POST">
+              <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" method="POST">
                 <button>X</button>
               </form>
             </td>

@@ -110,6 +110,7 @@ function createTicket (req,res){
   Flight.findById(req.params.flightId)
   .then(flight =>{
     console.log(flight)
+    console.log(req.body, 'Is this working?')
     flight.tickets.push(req.body)
     flight.save()
     .then(() => {

@@ -17,3 +17,13 @@ form > button {
   margin-left: auto;
   font-size: 22px;
 }
+
+#departs{
+  grid-column: span 2;
+  margin-right: auto;
+}
+
+#date {
+  grid-column: span 2;
+  margin-left: auto;
+}
