@@ -144,35 +144,23 @@ function deleteTicket(req, res) {
     res.redirect('/flights')
   })
 }
-function addToMeal(req, res) {
+function addToMeal(req,res){
   Flight.findById(req.params.flightId)
-    .then(flight => {
-      Meal.findById(req.body.mealId) // add this line to find the meal by ID
-        .then(meal => {
-          if (meal) { // check if meal exists
-            flight.meals.push(meal);
-            flight.save()
-              .then(() => {
-                res.redirect(`/flights/${flight._id}`);
-              })
-              .catch(err => {
-                console.log(err);
-                res.redirect('/flights');
-              });
-          } else {
-            console.log(`Meal with ID ${req.body.mealId} not found.`);
-            res.redirect('/flights');
-          }
-        })
-        .catch(err => {
-          console.log(err);
-          res.redirect('/flights');
-        });
+  .then(flight => {
+    flight.meals.push(req.body.mealId)
+    flight.save()
+    .then(() => {
+      res.redirect(`/flights/${flight._id}`)
     })
     .catch(err => {
-      console.log(err);
-      res.redirect('/flights');
-    });
+      console.log(err)
+      res.redirect('/flights')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
 }
   // find the flight using it's _id
   // push the meal _id into the cast array
