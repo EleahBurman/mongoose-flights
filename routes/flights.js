@@ -19,6 +19,8 @@ router.post('/:flightId/tickets', flightsCtrl.createTicket )
 router.post('/:flightId/meals', flightsCtrl.addToFood)
 // DELETE localhost:3000/flights/:flightId
 router.delete('/:flightId', flightsCtrl.delete)
+// DELETE localhost:3000/flights/:flightId/tickets/:ticketId
+router.delete('/:flightId/tickets/:ticketId', flightsCtrl.deleteTicket)
 // PUT localhost:3000/flights/:flightId
 router.put('/:flightId', flightsCtrl.update)
 export { router }
