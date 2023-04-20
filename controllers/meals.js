@@ -10,7 +10,7 @@ function newMeal(req, res){
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/movies')
+    res.redirect('/error')
   })
 }
 
@@ -31,7 +31,7 @@ function create(req, res) {
       })
       .catch(err => {
         console.log(err)
-        res.redirect('/meals/new')
+        res.redirect('/error')
       })
     }
   })

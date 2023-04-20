@@ -1,15 +1,37 @@
+<link rel="stylesheet" href="/stylesheets/main.css" />
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error! 🎊</title>
-</head>
-<body>
-  <h1><%= message %></h1>
-  <h2><%= error.status %></h2>
-</body>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script 
+	src="https://kit.fontawesome.com/4da7a940f0.js"
+	crossorigin="anonymous"
+	></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+  <title>'Error🔥'</title>
+
+  </head>
+  <body>
+    <nav>
+      <a 
+      href="./meals/new" class=<%= 'Add Meal' ? 'active' : '' %>
+    >
+      ADD MEAL
+    </a>
+      <a 
+        href="./flights/new" class=<%= 'Add Flight' ? 'active' : '' %>
+    >
+        ADD FLIGHT
+    </a>
+    <a 
+        href="./flights" class=<%= 'All Flights' ? 'active' : '' %>
+      >
+        ALL FLIGHTS
+      </a>
+    </nav>
+      <h1><%= message %></h1>
+        <h2><%= error.status %></h2>
+  </body>
 </html>
-
-
